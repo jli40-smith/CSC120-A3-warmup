@@ -50,7 +50,7 @@ public class ConversationIntro {
    */
   
   /** Divides its input by 7 */
-  public double doubleDivideBy7(double n) {
+  public double doubleDivideBy7(double n) { //Java can convert int to doubles without loss of info 
     n = n/7;
     return n;
   }
@@ -88,6 +88,9 @@ public class ConversationIntro {
       isEven = false;
     }
     return isEven;
+    /*return (n%2 ==0){
+
+    }*/
   }
 
   /*
@@ -111,7 +114,10 @@ public class ConversationIntro {
   
   /** Returns true if its input is one of:  .,?! */
   public boolean isPunctuation(String s) {
-    return s.equals(Object: ".", ",", "?", "!", "*", "/");
+    if (s.equals(".")){ 
+      return s.equals("."); 
+      //return true or false - its a boolean
+    }
   }
 
   /*
@@ -132,12 +138,12 @@ public class ConversationIntro {
    */
   
   /** Returns an array of whole numbers up to n */
-  public static int[] wholeNumbers(int n) {
+  public static int[] wholeNumbers(int n) { //Made a empty array for ints, and then it takes in the max value n, ex: if n = 5--> int[] = 1,2,3,4,5
     int[] arr = new int[n]; // allocate space for the array
-    //for (int i = 0; i < n; i++) {
-    //  arr[i] = i+1;
-    //}
-    return arr;
+    for (int i = 0; i < n; i++) { //starting at 0, checks if 0 is smaller than 5, if yes, makes i 1
+      arr[i] = i+1; //leaves arr[0] as 0, then starting in second space arr[1], will fill it with i+1, 0+1 = 1 
+    }
+    return arr; //Now i = 1, still smaller than 5, so makes i = 1+1 = 2, then fills in 3rd space in arr with 2, checks if 2<5... etc 
   }
 
   /*
