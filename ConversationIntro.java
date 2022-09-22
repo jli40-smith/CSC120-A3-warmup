@@ -9,7 +9,7 @@ public class ConversationIntro {
   
   /** Returns an integer one larger than its input */
   public int plusOne(int n) {
-    // n = n+1;
+    n = n+1;
     return n;
   }
 
@@ -21,7 +21,8 @@ public class ConversationIntro {
   
   /** Returns an integer that is double its input */
   public int timesTwo(int n) {
-    return 0;
+    n = n*2; 
+    return n;
   }
 
   /*
@@ -30,7 +31,8 @@ public class ConversationIntro {
   
   /** Returns the square of its input */
   public int squared(int n) {
-    return 0;
+    n = n*n;  
+    return n;
   }
 
   /*
@@ -39,7 +41,8 @@ public class ConversationIntro {
   
   /** Divides its input by seven, dropping remainders */
   public int intDivideBy7(int n) {
-    return 0;
+    n = n/7;
+    return n;
   }
 
   /*
@@ -47,8 +50,9 @@ public class ConversationIntro {
    */
   
   /** Divides its input by 7 */
-  public double doubleDivideBy7(int n) {
-    return 0;
+  public double doubleDivideBy7(double n) {
+    n = n/7;
+    return n;
   }
 
   /*
@@ -61,13 +65,13 @@ public class ConversationIntro {
    */
   
   /** Returns true if its input is prime */
-  public static boolean isPrime(int n) {
-    boolean isPrime = (n > 1); // one, zero, and negatives not prime
-    /*for (int i = 2; i <= Math.sqrt(n); i++) {
-        if (n%i == 0) {
-            isPrime = false;
+  public static boolean isPrime(int n) { //Type is boolean- it is TRUE/FALSE
+    boolean isPrime = (n > 1); // one, zero, and negatives not prime, if not larger than one, returns FALSE
+    for (int i = 2; i <= Math.sqrt(n); i++) { //compares the sqrt of n to i (incrmt 2, 3, 4, etc) until it is equal to or greater than i 
+        if (n%i == 0) { //if greater than i, checks if n is divisible by i with no remainders
+            isPrime = false; //if it is divisible, it is not Prime, if it is not Divisible, it is not Prime 
         }
-    }*/
+    }
     return isPrime;
   }
 
@@ -76,8 +80,14 @@ public class ConversationIntro {
    */
   
   /** Returns true if its input is even */
-  public boolean isEven(int n) {
-    return false;
+  public boolean isEven(int n) { 
+    boolean isEven; 
+    if (n%2 == 0) {
+      isEven = true;
+    } else { 
+      isEven = false;
+    }
+    return isEven;
   }
 
   /*
@@ -92,8 +102,7 @@ public class ConversationIntro {
   
   /** Returns true if its input is a comma */
   public static boolean isComma(String s) {
-    //return s.equals(",");
-    return (s == ",");
+    return s.equals(",");
   }
 
   /*
@@ -102,7 +111,7 @@ public class ConversationIntro {
   
   /** Returns true if its input is one of:  .,?! */
   public boolean isPunctuation(String s) {
-    return false;
+    return s.equals(Object: ".", ",", "?", "!", "*", "/");
   }
 
   /*
